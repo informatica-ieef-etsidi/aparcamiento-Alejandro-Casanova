@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 
 void main() {
 	char opcion = 'B';
+	char mat1[8], mat2[8];
 	int plaza1 = 0, plaza2 = 0;
-	char n1 = 'B', n2 = 'B', n3 = 'B', n4 = 'B', n5 = 'B', n6 = 'B';
 
 	while (1) {
 		system("cls");
@@ -16,30 +17,14 @@ void main() {
 		switch (opcion) {
 		case 'R':
 			if (plaza1 == 0) {
+				plaza1 = 1;
 				printf("Introduzca el numero de matricula:\n");
-				scanf_s("%d", &plaza1);
-				printf("Introduzca la primera letra de la matricula:\n");
-				getchar();
-				scanf_s("%c", &n1);
-				printf("Introduzca la segunda letra de la matricula:\n");
-				getchar();
-				scanf_s("%c", &n2);
-				printf("Introduzca la primera letra de la matricula:\n");
-				getchar();
-				scanf_s("%c", &n3);
+				scanf_s("%s", mat1, 8);
 			}
 			else if (plaza2 == 0) {
+				plaza2 = 1;
 				printf("Introduzca el numero de matricula:\n");
-				scanf_s("%d", &plaza2);
-				printf("Introduzca la primera letra de la matricula:\n");
-				getchar();
-				scanf_s("%c", &n4);
-				printf("Introduzca la segunda letra de la matricula:\n");
-				getchar();
-				scanf_s("%c", &n5);
-				printf("Introduzca la primera letra de la matricula:\n");
-				getchar();
-				scanf_s("%c", &n6);
+				scanf_s("%s", mat2, 8);
 			}
 			else
 				printf("El aparcamiento esta lleno.\n");
@@ -64,17 +49,17 @@ void main() {
 				}
 				else {
 					printf("Plaza 1 - Libre\n");
-					printf("Plaza 2 - Ocupada - Matricula: %d%c%c%c\n", plaza2, n4, n5, n6);
+					printf("Plaza 2 - Ocupada - Matricula: %s\n", mat2);
 				}
 			}
 			else {
 				if (plaza2 == 0) {
-					printf("Plaza 1 - Ocupada - Matricula: %d%c%c%c\n", plaza1, n1, n2, n3);
+					printf("Plaza 1 - Ocupada - Matricula: %s\n", mat1);
 					printf("Plaza 2 - Libre\n");
 				}
 				else {
-					printf("Plaza 1 - Ocupada - Matricula: %d%c%c%c\n", plaza1, n1, n2, n3);
-					printf("Plaza 2 - Ocupada - Matricula: %d%c%c%c\n", plaza2, n2, n3, n4);
+					printf("Plaza 1 - Ocupada - Matricula: %s\n", mat1);
+					printf("Plaza 2 - Ocupada - Matricula: %s\n", mat2);
 				}
 			} 
 			break;
